@@ -8,8 +8,8 @@ pirineos_Interfaz
     
 2.Rutas+menu.
 - Menu. Inicio, rutas(6 index) y alojamiento (camping y refugio). Desplegable
-    - Mapa. Responsive. 
-    - Explicación. Responsive que se haga botón, y que se despliegue.
-    - Fotos pequeñas
+- Mapa. Responsive. 
+- Explicación. Responsive que se haga botón, y que se despliegue.
+- Fotos pequeñas
     
 3.Camping. (¿slider?)
