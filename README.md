@@ -2,9 +2,9 @@ pirineos_Interfaz
 =================
 
 1.Index.
-    - Background-foto
-    - 6 box con efectos
-    - Botones círculos(acceso a camping)
+   - Background-foto
+   - 6 box con efectos
+   - Botones círculos(acceso a camping)
     
 2.Rutas+menu.
 - Menu. Inicio, rutas(6 index) y alojamiento (camping y refugio). Desplegable
