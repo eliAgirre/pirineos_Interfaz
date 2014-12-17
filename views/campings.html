@@ -1,0 +1,197 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title> Campings </title>
+
+    <!-- Link para css -->
+    <link rel="stylesheet" href="../css/style2.css" />
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+
+    <!-- Importación funciones de JavaScript-->
+    <script type="text/javascript" src="../js/funciones.js"></script>
+    <script type="text/javascript" src="../js/gridify.js"></script>
+
+    <!-- Importación funciones de jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    
+    <!-- JavaScript y jQuery -->
+    <script type="text/javascript">
+
+        //Cuando la ventana se carga
+        $(window).load(function() {
+
+              var options ={
+
+                   srcNode: 'img',             //imágenes
+                   margin: '30px',             
+                   width: '250px',           
+                   max_width: '',              
+                   resizable: true,            //que se adapten al tamaño de la ventana
+                   transition: 'all 0.8s ease' 
+              }
+
+         });
+
+        $(function() {
+
+            //Obtenemos el link que contenga el id pull
+            var pull=$('#pull');
+            var seccion1=$('#seccion1');
+
+            //Obtenemos todos las etiquetas ul que contenga la etiqueta nav
+            var menu=$('nav ul');
+
+            //Guardamos la altura del menú en una variable
+            var menuHeight=menu.height();
+
+            //Cuando haga clic en el link, realizaremos una función con pasando un parámetro
+            $(pull).on('click', function(e) {
+
+                e.preventDefault();
+                menu.slideToggle();
+                
+                //Eliminamos el atributo onmouseover de cada sección
+                seccion1.removeAttr('onmouseover');
+
+            //Cierre del método on
+            });
+
+            //Cuando la ventana se hace más pequeño, se realiza la siguiente función
+            $(window).resize(function(){
+
+              //Gaurdamos en una variable el width de la ventana de forma local
+              var w=$(window).width();
+
+              //Si la anchura es mayor que 413px, la explicación debe aparecer
+              if(w>413 && menu.is(':hidden') ) {
+
+                $("#expli").css("display","block");
+
+                //Eliminamos el atributo style del menú
+                menu.removeAttr('style');
+                
+                //Añdimos el atributo onmouseover al cada sección
+                seccion1.attr('onmouseover','ver(1)');
+
+              }
+              else{
+
+                //Si la anchura es menor que 413px, la explicación debe desaparecer
+                $("#expli").css("display","none");
+                
+              }
+
+            //Cierre de la función resize
+            });
+
+        //Cierre de la función general    
+        });
+
+    </script>
+    
+</head>
+
+<body>
+
+    <!-- Engloba todas las etiquetas -->
+    <div class="container">
+
+    <center><div id="div_logo"><a href="../portada.html"><img id="logo" src="../img/logo_grande.png"></a></div></center>
+        
+       <!-- Menú -->
+        <nav id="menu_nav" class="clearfix">
+            
+            <!-- Lista desordenada-->
+            <ul class="clearfix">
+
+                <li><a href="../index.html" id="highlight"> Inicio </a></li>
+                
+                <li><a href="pirineos.html"> Rutas </a></li>
+                
+                <li id="seccion1" onMouseOver="ver(1)" onMouseOut="ocultar(1)">
+                    
+                    <a href="refugio.html"> Alojamiento </a>
+                                
+                      <div id="subseccion1">
+                             <a href="refugio.html"> Refugio </a> 
+                             <a href="campings.html"> Camping </a>   
+                                                                
+                      </div> <!-- Cierre de la subsección -->
+                </li> <!-- Cierre de la sección1 -->
+
+            </ul> <!-- Cierre de la lista desordenada --> 
+
+            <a href="#" id="pull"> </a>  
+            
+        </nav> <!-- Cierre del menú -->
+
+        <h3 id="tituloCamping"> Galería de campings </h3> 
+                
+        <!-- Grid layout de imágenes-->
+        <div class="grid">
+
+            <img src="../img/glamping/glamping (1).jpg" >
+            <img src="../img/glamping/glamping (2).jpg" >
+            <img src="../img/glamping/glamping (3).jpg" >
+            <img src="../img/glamping/glamping (4).jpg" >
+            <img src="../img/glamping/glamping (7).jpg" >
+            <img src="../img/glamping/glamping (8).jpg" >
+            <img src="../img/glamping/glamping (5).jpg" >
+            <img src="../img/glamping/glamping (9).jpg" >
+            <img src="../img/glamping/glamping (12).jpg" >
+            
+
+        </div><!-- Cierre de grid layout -->
+
+         <!-- Div que te lleva al formulario-->
+        <div id="reserva">
+
+            <a href="reserva2.html"><h3>AÑADE TU CAMPING</h3></a>            
+
+        </div><!-- Cierre del div que te lleva al formulario -->
+
+        <center> <input type="button" id="boton" value="Refugio" onclick="location.href='refugio.html'"> </center>
+
+        
+        <!-- Pie de toda la página -->
+        <footer id="footer">
+
+            <div class="redes">
+         
+            <ul>
+                
+                <li><a href="#"><img src="../img/redes/twitter.jpg"/><a></li>
+                <li><a href="#"><img src="../img/redes/facebook.jpg"/><a></li>
+                <li><a href="#"><img src="../img/redes/flickr.jpg"/><a></li>
+
+            </ul> <!-- Cierre la lista desordenada -->
+
+            </div> <!-- Cierre div de enlaces -->
+
+            <div class="enlaces">
+
+                <ul>
+                
+                    <li><a href="#"> Contacto </a></li>
+                    <li><a href="#"> Condiciones de uso </a></li>
+                    <li><a href="#"> Aviso legal </a></li>
+                    <li><a href="#"> Política de privacidad </a></li>
+                    <li><a href="#"> Política de cookies </a></li>
+
+                </ul> <!-- Cierre la lista desordenada -->
+                
+            </div> <!-- Cierre div de enlaces -->
+
+        </footer> <!-- Cierre de pie de página -->
+
+    </div> <!-- Cierre div del container -->
+
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title> Pirineos </title>
+
+    <!-- Link para css -->
+    <link rel="stylesheet" href="../css/style2.css" />
+    
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+
+    <!-- Link para la fuente del menu_nav -->
+    <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+    
+    <!-- Importación funciones de JavaScript-->
+    <script type="text/javascript" src="../js/funciones.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>   
+    
+    <!-- jQuery -->
+    <script type="text/javascript">
+    
+        $(document).ready(function(){
+
+            //Obtenemos el link que contenga el id pull
+            var pull=$('#pull');
+            var seccion1=$('#seccion1');
+
+            //Obtenemos todos las etiquetas ul que contenga la etiqueta nav
+            var menu=$('nav ul');
+
+            var html=$('html');
+
+            //Guardamos la altura del menú en una variable
+            var menuHeight=menu.height();
+
+
+            //Cuando haga clic en el link, realizaremos una función con pasando un parámetro
+            $(pull).on('click', function(e) {
+
+                e.preventDefault();
+                menu.slideToggle();
+                
+                //Eliminamos el atributo onmouseover de cada sección
+                seccion1.removeAttr('onmouseover');
+
+            //Cierre del método on
+            });
+
+            //Cuando la ventana se hace más pequeño, se realiza la siguiente función
+            $(window).resize(function(){
+
+              //Gaurdamos en una variable el width de la ventana de forma local
+              var w=$(window).width();
+
+              //Si la anchura es mayor que 413px, la explicación debe aparecer
+              if(w>413) {
+
+    
+                $("#expli").css("display","block");
+
+                //Eliminamos el atributo style del menú
+                menu.removeAttr('style');
+                
+                //Añdimos el atributo onmouseover al cada sección
+                seccion1.attr('onmouseover','ver(1)');
+
+              }
+              else{
+
+                //Si la anchura es menor que 413px, la explicación debe desaparecer
+                $("#expli").css("display","none");
+                
+              }
+
+            //Cierre de la función resize
+            });
+
+        //Cierre de la función general    
+        });
+
+    </script>
+    
+</head>
+
+<body>
+
+    <!-- Engloba todas las etiquetas -->
+    <div class="container">
+
+    <center><div id="div_logo"><a href="../portada.html"><img id="logo" src="../img/logo_grande.png"></a></div></center>
+        
+       <!-- Menú -->
+        <nav id="menu_nav" class="clearfix">
+            
+            <!-- Lista desordenada-->
+            <ul class="clearfix">
+
+                <li><a href="../index.html" id="highlight"> Inicio </a></li>
+                    
+                <li><a href="pirineos.html"> Rutas </a></li>
+                
+                <li id="seccion1" onMouseOver="ver(1)" onMouseOut="ocultar(1)">
+                    
+                    <a href="refugio.html"> Alojamiento </a>
+                                
+                      <div id="subseccion1">
+                             <a href="refugio.html"> Refugio </a> 
+                             <a href="campings.html"> Camping </a>   
+                                                                
+                      </div> <!-- Cierre de la subsección -->
+                </li> <!-- Cierre de la sección1 -->
+
+            </ul> <!-- Cierre de la lista desordenada --> 
+
+            <a href="#" id="pull">  </a>  
+            
+        </nav> <!-- Cierre del menú -->   
+        
+        
+        <!--Representa el mapa y la explicación -->
+        <section class="bloque">
+        
+            <!-- Mapa -->
+            <div class="columna1">
+                
+               <iframe id="mapa" src='https://a.tiles.mapbox.com/v4/sheilpbi.k74njlap/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2hlaWxwYmkiLCJhIjoieUMzTzExdyJ9.5YsWL6FKrUbzW94mJ00-3w'></iframe>
+                
+            </div>
+            
+            <!-- Explicación -->
+            <div class="columna2" id="expli">
+            
+               <div>
+
+                    <h1>Las 6 Zonas de Pirineos</h1>
+                    
+                    <p>
+                        <center> <input type="button" class="ruta" id="botonRuta1" value="Aquitania" onclick="cambiarMapa('https://a.tiles.mapbox.com/v4/sheilpbi.k90ei7oc/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2hlaWxwYmkiLCJhIjoieUMzTzExdyJ9.5YsWL6FKrUbzW94mJ00-3w');" onmouseover="cambiarColor(1);mostrar(1);" onmouseout="colorOriginal(1);ocultar(1);"></center> 
+                    </p>
+
+
+                    <div id="parrafo1">
+                      <p> Es una región que está limitada al sur por media y alta montaña: Los Pirineos. <br> <br> 
+                      Desde la Rhune, primera cumbre –también la más baja: 905 m– al oste del País Vasco, hasta el Puerto de Pourtalet que, al sur de Pau y al pie del Pico de Ossau (2.884 m).</p>
+                    </div>
+                    
+                    <p>
+                        <center> <input type="button" class="ruta" id="botonRuta2" value="Mediodía-Pirineos" onclick="cambiarMapa('https://a.tiles.mapbox.com/v4/sheilpbi.k90eh938/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2hlaWxwYmkiLCJhIjoieUMzTzExdyJ9.5YsWL6FKrUbzW94mJ00-3w');" onmouseover="cambiarColor(2);mostrar(2);" onmouseout="colorOriginal(2);ocultar(2);"></center> 
+                    </p>
+
+                    <div id="parrafo2">
+                      <p> Paisajes preservados y grandes espacios, pueblos de carácter y lugares históricos, ríos y canales, viñedos y ciudades con los colores del Sur. <br><br> Mediodía-Pirineos rima con descubrimiento, exploración, experiencias nuevas, humanidad.</p>
+                    </div>
+
+                    <p>
+                        <center> <input type="button" class="ruta" id="botonRuta3"value="Rosellón" onclick="cambiarMapa('https://a.tiles.mapbox.com/v4/sheilpbi.k90effol/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2hlaWxwYmkiLCJhIjoieUMzTzExdyJ9.5YsWL6FKrUbzW94mJ00-3w');" onmouseover="cambiarColor(3);mostrar(3);" onmouseout="colorOriginal(3);ocultar(3);"></center> 
+                    </p>
+
+                    <div id="parrafo3">
+                      <p> De los Pirineos Orientales a las Cevenas, no faltan estaciones donde llenarse de aire puro y energía. <br> <br> Con pistas de esquí alpino, de fondo, snow-parks, zonas lúdicas para niños y principiantes, y una pista de luge.</p>
+                    </div>
+                    
+                    <p>
+                        <center> <input type="button" class="ruta" id="botonRuta4" value="Navarra" onclick="cambiarMapa('https://a.tiles.mapbox.com/v4/sheilpbi.k90edigp/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2hlaWxwYmkiLCJhIjoieUMzTzExdyJ9.5YsWL6FKrUbzW94mJ00-3w');" onmouseover="cambiarColor(4);mostrar(4);" onmouseout="colorOriginal(4);ocultar(4);"></center> 
+                    </p>
+
+                    <div id="parrafo4">
+                        <p> El principal atractivo del Pirineo navarro es su riqueza natural y paisajística.<br> <br>  La zona norte ofrece variadas fórmulas de alojamiento para disfrutar de un camping o de un albergue, y para descansar en los diversos alojamientos rurales.</p>
+                    </div>
+
+                    <p>
+                        <center> <input type="button" class="ruta" id="botonRuta5" value="Aragón" onclick="cambiarMapa('https://a.tiles.mapbox.com/v4/sheilpbi.k90em8e3/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2hlaWxwYmkiLCJhIjoieUMzTzExdyJ9.5YsWL6FKrUbzW94mJ00-3w');" onmouseover="cambiarColor(5);mostrar(5);" onmouseout="colorOriginal(5);ocultar(5);"></center> 
+                    </p>
+
+                    <div id="parrafo5">
+                        <p> El Parque nacional de Ordesa y Monte Perdido se úbica en el Pirineo Aragones. <br> <br> Se reparte entre los términos municipales de Bielsa, Fanlo, Puértolas, Tella-Sin, Torla y Broto. Recibe una media de más de 600 000 visitantes al año.</p>
+                    </div>
+                    
+                    <p>
+                        <center> <input type="button" class="ruta" id="botonRuta6" value="Cataluña" onclick="cambiarMapa('https://a.tiles.mapbox.com/v4/sheilpbi.k8kc797m/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1Ijoic2hlaWxwYmkiLCJhIjoieUMzTzExdyJ9.5YsWL6FKrUbzW94mJ00-3w');" onmouseover="cambiarColor(6);mostrar(6);" onmouseout="colorOriginal(6);ocultar(6);"></center> 
+                    </p>
+                    
+                    <div id="parrafo6">
+                        <p> El Pirineo Catalán es ante todo y sobre todo belleza, un rincón paradisíaco único, donde la naturaleza ha desparramado sin regatear a manos llenas todos los mejores encantos de la creación. <br> <br> Se combina la perfección el salvajismo de la alta montaña.</p>
+                    </div>
+                    
+                </div> <!-- Fin Zonas -->
+
+            <center> <input type="button" id="boton" value="Zonas de Pirineos" onclick="mostrarDesaparecer()"></center> 
+        
+        </section> <!-- Cierre del bloque -->
+
+        <!-- Representa las imágenes pequeñas -->
+        <div class="columna3">
+        
+            <img src="../img/img_circulo/foto3.jpg"></img>
+            <img src="../img/img_circulo/foto2.jpg"></img>
+            <img src="../img/img_circulo/foto5.jpg"></img>
+            <img src="../img/img_circulo/foto6.jpg"></img>
+            <img src="../img/img_circulo/foto7.jpg"></img>
+            <img src="../img/img_circulo/foto4.jpg"></img>
+            
+        </div> <!-- Cierre del div de pequeñas imágenes -->
+        
+        <!-- Pie de toda la página -->
+        <footer id="footer">
+
+            <div class="redes">
+         
+            <ul>
+                
+                <li><a href="#"><img src="../img/redes/twitter.jpg"/><a></li>
+                <li><a href="#"><img src="../img/redes/facebook.jpg"/><a></li>
+                <li><a href="#"><img src="../img/redes/flickr.jpg"/><a></li>
+
+            </ul> <!-- Cierre la lista desordenada -->
+
+            </div> <!-- Cierre div de enlaces -->
+
+            <div class="enlaces">
+
+                <ul>
+                
+                    <li><a href="#"> Contacto </a></li>
+                    <li><a href="#"> Condiciones de uso </a></li>
+                    <li><a href="#"> Aviso legal </a></li>
+                    <li><a href="#"> Política de privacidad </a></li>
+                    <li><a href="#"> Política de cookies </a></li>
+
+                </ul> <!-- Cierre la lista desordenada -->
+                
+            </div> <!-- Cierre div de enlaces -->
+
+        </footer> <!-- Cierre de pie de página -->
+
+    </div> <!-- Cierre div del container -->
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title> Campings </title>
+
+    <!-- Link para css -->
+    <link rel="stylesheet" href="../css/style2.css" />
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+
+    <!-- Importación funciones de JavaScript-->
+    <script type="text/javascript" src="../js/funciones.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>  
+
+    <!-- jQuery -->
+    <script type="text/javascript">
+
+        $(function() {
+
+            //Obtenemos el link que contenga el id pull
+            var pull=$('#pull');
+            var seccion1=$('#seccion1');
+
+            //Obtenemos todos las etiquetas ul que contenga la etiqueta nav
+            var menu=$('nav ul');
+            
+            //Guardamos la altura del menú en una variable
+            var menuHeight=menu.height();
+
+            //Cuando haga clic en el link, realizaremos una función con pasando un parámetro
+            $(pull).on('click', function(e) {
+
+                e.preventDefault();
+                menu.slideToggle();
+                
+                //Eliminamos el atributo onmouseover de cada sección
+                seccion1.removeAttr('onmouseover');
+
+            //Cierre del método on
+            });
+
+            //Cuando la ventana se hace más pequeño, se realiza la siguiente función
+            $(window).resize(function(){
+
+              //Gaurdamos en una variable el width de la ventana de forma local
+              var w=$(window).width();
+
+              //Si la anchura es mayor que 413px, la explicación debe aparecer
+              if(w>413 && menu.is(':hidden') ) {
+
+                $("#expli").css("display","block");
+
+                //Eliminamos el atributo style del menú
+                menu.removeAttr('style');
+                
+               //Añdimos el atributo onmouseover al cada sección
+                seccion1.attr('onmouseover','ver(1)');
+
+              }
+              else{
+
+                //Si la anchura es menor que 413px, la explicación debe desaparecer
+                $("#expli").css("display","none");
+              }
+
+            //Cierre de la función resize
+            });
+
+        //Cierre de la función general    
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+    <center><div id="div_logo"><a href="../portada.html"><img id="logo" src="../img/logo_grande.png"></a></div></center>
+        
+        <!-- Menú -->
+        <nav id="menu_nav" class="clearfix">
+            
+            <!-- Lista desordenada-->
+            <ul class="clearfix">
+
+                <li><a href="../index.html" id="highlight"> Inicio </a></li>
+                
+                <li><a href="pirineos.html"> Rutas </a></li>
+                
+                <li id="seccion1" onMouseOver="ver(1)" onMouseOut="ocultar(1)">
+                    
+                    <a href="refugio.html"> Alojamiento </a>
+                                
+                      <div id="subseccion1">
+                             <a href="refugio.html"> Refugio </a> 
+                             <a href="campings.html"> Camping </a>   
+                                                                
+                      </div> <!-- Cierre de la subsección -->
+                </li> <!-- Cierre de la sección1 -->
+
+            </ul> <!-- Cierre de la lista desordenada --> 
+
+            <a href="#" id="pull"> </a>  
+            
+        </nav> <!-- Cierre del menú -->        
+
+        <h3 id="tituloCamping"> Nuestros refugios </h3>      
+
+        <!-- Slider -->
+        <div id="slider"> 
+
+            <input type="radio" id="control1" name="controls" checked="checked"/>
+            <label for="control1"></label>
+            <input type="radio" id="control2" name="controls"/>
+            <label for="control2"></label>
+            <input type="radio" id="control3" name="controls"/>
+            <label for="control3"></label>
+            <input type="radio" id="control4" name="controls"/>
+            <label for="control4"></label>
+            <input type="radio" id="control5" name="controls"/>
+            <label for="control5"></label>
+
+            <div id="sliderinner">
+
+                <ul>
+                    <li>
+                        <img src="../img/refugio/refugioLinza.jpg" style='width:100%;'/>
+                        <div class="description">
+     
+                            <div class="description-text">
+                                <h4> Refugio de Linza </h4>
+                                <p>Se ubica en la cabecera del Valle de Ansó, el más occidental de los valles pirenaicos aragoneses, y enclavado en pleno Parque Natural de los Valles Occidentales.</p>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <img src="../img/refugio/refugioAberouat.jpg" style='width:100%;'/>
+                        <div class="description">
+
+                            <div class="description-text">
+                                <h4> Refuge de l'Abérouat </h4>
+                                <p>El refugio es para todos los niveles, tanto niños como adolescentes. Hay equipos especificados para realizar escalada,ciclismo,raqutetas, esquís, etc.</p>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <img src="../img/refugio/refugeLarribet.jpg" style='width:100%;'/>
+                        <div class="description">
+      
+                            <div class="description-text">
+                                <h4> Refuge de Larribet</h4>
+                                <p>Reconstruida en 1992, era un pequeño refugio maravilloso maravillosamente situado a los pies de balaîtous.</p>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <img src="../img/refugio/refugeMariailles.jpg" style='width:100%;'/>
+                        <div class="description">
+      
+                            <div class="description-text">
+                                <h4> Refuge de Mariailles </h4>
+                                <p>Contiene dormitorios colectivos con ducha y chimenea. También hay bar,restaurante y bibliotca y en el exterior está el parque.</p>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <img src="../img/refugio/refugeCamporells.jpg" style='width:100%;'/>
+                        <div class="description">
+      
+                            <div class="description-text">
+                                <h4> Refuges des Camporells </h4>
+                                <p>Es posible reservar en el período de verano del 25 al 30 de octubre como en invierno. </p>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                </ul><!-- Cierre de la lista desordenada-->
+
+            </div><!-- Cierre del sliderinner-->
+            
+        </div><!-- Cierre del slider-->
+
+        <!-- Div que te lleva al formulario-->
+        <div id="reserva">
+
+            <a href="reserva1.html"><h3>AÑADE TU REFUGIO</h3></a>            
+
+        </div><!-- Cierre del div que te lleva al formulario -->
+
+           <center> <input type="button" id="boton" value="Camping" onclick="location.href='campings.html'"> </center>
+
+        <!-- Pie de toda la página -->
+        <footer id="footer">
+
+            <div class="redes">
+         
+            <ul>
+                
+                <li><a href="#"><img src="../img/redes/twitter.jpg"/><a></li>
+                <li><a href="#"><img src="../img/redes/facebook.jpg"/><a></li>
+                <li><a href="#"><img src="../img/redes/flickr.jpg"/><a></li>
+
+            </ul> <!-- Cierre la lista desordenada -->
+
+            </div> <!-- Cierre div de enlaces -->
+
+            <div class="enlaces">
+
+                <ul>
+                
+                    <li><a href="#"> Contacto </a></li>
+                    <li><a href="#"> Condiciones de uso </a></li>
+                    <li><a href="#"> Aviso legal </a></li>
+                    <li><a href="#"> Política de privacidad </a></li>
+                    <li><a href="#"> Política de cookies </a></li>
+
+                </ul> <!-- Cierre la lista desordenada -->
+                
+            </div> <!-- Cierre div de enlaces -->
+
+        </footer> <!-- Cierre de pie de página -->
+        
+    </div> <!-- Cierre div del container -->
+
+</body>
+
+</html>

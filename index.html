@@ -1,0 +1,236 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title> Pirineos </title>
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn:400,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>   
+
+    <!-- Importación funciones de JavaScript-->
+    <script type="text/javascript" src="../js/funciones.js"></script>
+    
+    <!-- jQuery -->
+    <script type="text/javascript">
+
+       $(document).ready(function(){
+
+          //Obtenemos la clase de cada bloque
+          var bloque1=$('.bloque1');
+          var bloque2=$('.bloque2');
+
+          //Cuando la ventana se hace más pequeño, se realiza la siguiente función
+          $(window).resize(function(){
+
+            //Gaurdamos en una variable el width de la ventana de forma local
+            var w=$(window).width();
+
+            //Si la anchura es mayor que 700px, aparecen el bloque1 y el bloque2
+            if(w>700) {
+
+              //Añdimos el atributo class al cada sección
+              bloque1.attr('class','bloque1');
+              bloque2.attr('class','bloque2');
+              
+
+            }
+            else{
+
+              //Si la anchura es menor que 700px, eliminamos el atributo class cada bloque
+              bloque1.removeAttr('class');
+              bloque2.removeAttr('class');
+              
+            }
+            
+
+          //Cierre de la función resize
+          });
+
+      //Cierre de la función general    
+      });
+
+    </script> <!-- Cierre de jQuery -->
+        
+</head>
+
+<body>
+
+    <div id="div_logoI"><a href="../portada.html"><img id="logoI" src="img/logo_grande.png"></a></div>
+    
+    <!-- Representa a todo el cuadro -->
+    <div class="cuadricula">
+    
+      <!-- Representa la fila1 del cuadrado -->
+      <section class="bloque1">
+
+        <div class="divDeInfoOculta" id="primero">
+        
+            <a href="views/pirineos.html"> Aquitania </a>
+
+            <!-- Usamos figure para poder usar figcaption que acompañará a la figure, en nuestro caso es una foto -->
+            <figure class="infoAmostrar">
+            
+              <div class="imagenes" onclick="location.href='views/pirineos.html'"><img src="img/index/aquitania.png"></div>
+              
+              <!-- Figcaption funciona como un pie de foto -->
+              <figcaption class="icons">
+
+                  <ul>
+
+                    <li><a href="views/pirineos.html"><img id="icono_ruta" src="img/icono1.png"></a></li>
+                    <li><a href="views/campings.html"><img id="icono_alojamiento" src="img/icono2.png"></a></li>
+                    <li><a href="views/refugio.html"><img id="icono_mas" src="img/icono3.png"></a></li>
+
+                  </ul> <!-- Cierre la lista desordenada -->
+                
+              </figcaption> <!-- Cierre del figcaption (footer of foto) -->
+              
+            </figure> <!-- Cierre del figure -->
+
+        </div> <!-- Cierre del div 1 -->
+        
+        <div class="divDeInfoOculta" id="segundo">
+        
+          <a href="views/pirineos.html"> Mediodía-Pirineos </a>
+
+            <figure class="infoAmostrar">
+            
+               <div class="imagenes" onclick="location.href='views/pirineos.html'"><img src="img/index/mediodia-pirineos.jpg"></div>
+              
+              <!-- Figcaption funciona como un pie de foto -->
+              <figcaption class="icons">
+
+                  <ul>
+
+                    <li><a href="views/pirineos.html"><img id="icono_ruta" src="img/icono1.png"></a></li>
+                    <li><a href="views/campings.html"><img id="icono_alojamiento" src="img/icono2.png"></a></li>
+                    <li><a href="views/refugio.html"><img id="icono_mas" src="img/icono3.png"></a></li>
+
+                  </ul> <!-- Cierre la lista desordenada -->
+                
+              </figcaption> <!-- Cierre del figcaption (footer of foto) -->
+              
+            </figure> <!-- Cierre del figure -->
+            
+        </div> <!-- Cierre del div 2 -->
+        
+        <div class="divDeInfoOculta" id="tercero">
+        
+            <a href="views/pirineos.html"> Rosellón </a>
+
+            <figure class="infoAmostrar">
+            
+              <div class="imagenes" onclick="location.href='views/pirineos.html'"><img src="img/index/rosellon.jpg"></div>
+              
+                <!-- Figcaption funciona como un pie de foto -->
+              <figcaption class="icons">
+
+                  <ul>
+
+                    <li><a href="views/pirineos.html"><img id="icono_ruta" src="img/icono1.png"></a></li>
+                    <li><a href="views/campings.html"><img id="icono_alojamiento" src="img/icono2.png"></a></li>
+                    <li><a href="views/refugio.html"><img id="icono_mas" src="img/icono3.png"></a></li>
+
+                  </ul> <!-- Cierre la lista desordenada -->
+                
+              </figcaption> <!-- Cierre del figcaption (footer of foto) -->
+              
+            </figure> <!-- Cierre del figure -->
+
+        </div> <!-- Cierre del div 3 -->
+
+      </section> <!-- cierre de la fila1 -->
+
+
+
+      <!-- Representa la fila2 del cuadrado -->
+      <section class="bloque2">
+        
+          <div class="divDeInfoOculta" id="cuarto">
+          
+              <a href="views/pirineos.html"> Navarra </a>
+
+              <figure class="infoAmostrar">
+            
+                <div class="imagenes" onclick="location.href='views/pirineos.html'"><img src="img/index/navarra.jpg"></div>
+                
+                <!-- Figcaption funciona como un pie de foto -->
+                <figcaption class="icons">
+
+                    <ul>
+
+                      <li><a href="views/pirineos.html"><img id="icono_ruta" src="img/icono1.png"></a></li>
+                      <li><a href="views/campings.html"><img id="icono_alojamiento" src="img/icono2.png"></a></li>
+                      <li><a href="views/refugio.html"><img id="icono_mas" src="img/icono3.png"></a></li>
+
+                    </ul> <!-- Cierre la lista desordenada -->
+                  
+                </figcaption> <!-- Cierre del figcaption (footer of foto) -->
+              
+            </figure> <!-- Cierre del figure -->
+
+          </div> <!-- Cierre del div 4 -->
+          
+          <div class="divDeInfoOculta" id="quinto">
+          
+             <a href="views/pirineos.html"> Aragón </a>
+
+             <figure class="infoAmostrar">
+            
+              <div class="imagenes" onclick="location.href='views/pirineos.html'"><img src="img/index/aragon.jpg"></div>
+              
+              <!-- Figcaption funciona como un pie de foto -->
+              <figcaption class="icons">
+
+                  <ul>
+
+                    <li><a href="views/pirineos.html"><img id="icono_ruta" src="img/icono1.png"></a></li>
+                    <li><a href="views/campings.html"><img id="icono_alojamiento" src="img/icono2.png"></a></li>
+                    <li><a href="views/refugio.html"><img id="icono_mas" src="img/icono3.png"></a></li>
+
+                  </ul> <!-- Cierre la lista desordenada -->
+                
+              </figcaption> <!-- Cierre del figcaption (footer of foto) -->
+              
+            </figure> <!-- Cierre del figure -->
+              
+          </div>
+          
+          <div class="divDeInfoOculta" id="sexto">
+          
+              <a href="views/pirineos.html"> Cataluña </a>
+
+              <figure class="infoAmostrar">
+            
+              <div class="imagenes" onclick="location.href='views/pirineos.html'"><img src="img/index/catalan.jpg"></div>
+              
+              <!-- Figcaption funciona como un pie de foto -->
+              <figcaption class="icons">
+
+                  <ul>
+
+                    <li><a href="views/pirineos.html"><img id="icono_ruta" src="img/icono1.png"></a></li>
+                    <li><a href="views/campings.html"><img id="icono_alojamiento" src="img/icono2.png"></a></li>
+                    <li><a href="views/refugio.html"><img id="icono_mas" src="img/icono3.png"></a></li>
+
+                  </ul> <!-- Cierre la lista desordenada -->
+                
+              </figcaption> <!-- Cierre del figcaption (footer of foto) -->
+              
+            </figure> <!-- Cierre del figure -->
+              
+          </div>
+
+        </section> <!-- cierre de la fila2 -->
+        
+    </div> <!-- cierre de la cuadricula -->
+
+</body>
+
+</html>

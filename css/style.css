@@ -1,0 +1,340 @@
+/*************************************************************************************************
+                                            Selector UNIVERSAL
+************************************************************************************************ */
+
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+html{
+
+    background-image: url("../img/patterns/4.jpg");
+    background-repeat: repeat;
+
+}
+
+a{
+
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    float: right;
+    padding: 30px;
+
+}
+
+figure a{
+
+    padding: 0px;
+
+}
+
+figure img{
+    
+    width:70%;
+}
+
+/*Iconos bajo la foto */
+figcaption>ul>li>a>img{
+
+    margin-top: 8.5px;
+    width: 30px;
+    height: 30px;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+
+}
+
+figcaption>ul>li>a>img:hover{
+
+    -webkit-transform: scale(0.8);
+}
+
+/***********************************************************************************************
+                                       Selectores por CLASE 
+***********************************************************************************************/
+
+.cuadricula{
+
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    text-align: center;
+
+}
+
+.bloque1{
+
+    display: -webkit-box; /* chrome*/
+    -webkit-box-orient: horizontal; /*orientación horizontal*/
+    width: 90%;
+    height: 40%;
+    -webkit-background-size: cover;
+    margin: 3% 5% 3% 3%;
+
+}
+
+.bloque2{
+
+    display: -webkit-box; /* chrome*/
+    -webkit-box-orient: horizontal; /*orientación horizontal*/
+    width: 90%;
+    height: 40%;
+    -webkit-background-size: cover;
+    margin: 3% 5% 3% 3%;
+}
+
+/* La info a mostrar */
+.infoAmostrar{ 
+    
+    display: block;
+}
+
+/* Footer of figcaption */
+.icons{
+
+    /*border: 2px solid orange;*/
+    display: -webkit-box; /*chrome*/
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+
+}
+
+.icons li {
+    
+    display: inline-block; /* Para poner el menú en horizontal */
+
+}
+
+.imagenes{
+
+    cursor: pointer;
+}
+
+/* ************************************************************************************************
+                                            Selectores por ID
+************************************************************************************************ */
+
+#div_logo{
+
+    width: 100%;
+    height: 100%;
+}
+
+#logo{
+
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 50%;
+  -webkit-animation:fadein 1s;
+}
+
+#div_logoI{
+
+    width: 100%;
+    height: 20%;
+    margin-left: -15%;
+
+}
+
+#logoI{
+
+    width: 50%;
+
+
+}
+
+#primero{
+    
+    /*border: 1px solid blue;*/
+    width: 33%;
+    height: 280px; /* La altura de cada cuadradito*/
+    background: rgba(0, 0, 0, 0.85);
+
+}
+
+#segundo{
+    
+    /*border: 1px solid blue;*/
+    width: 33%;
+    height: 280px;
+    margin-left: 2%;
+    margin-right: 2%;
+    background: rgba(0, 0, 0, 0.85);
+
+}
+
+#tercero{
+    
+    /*border: 1px solid blue;*/
+    width: 33%;
+    height: 280px;
+    background: rgba(0, 0, 0, 0.85);
+    
+}
+
+#cuarto{
+    
+    /*border: 1px solid blue;*/
+    width: 33%;
+    height: 280px;
+    background: rgba(0, 0, 0, 0.85);
+    
+}
+
+#quinto{
+    
+    /*border: 1px solid blue;*/
+    width: 33%;
+    height: 280px;
+    margin-left: 2%;
+    margin-right: 2%;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+#sexto{
+    
+    /*border: 1px solid blue;*/
+    width: 33%;
+    height: 280px;
+    background: rgba(0, 0, 0, 0.85);
+    
+}
+
+
+
+/* ************************************************************************************************
+                                            RESPONSIVE
+************************************************************************************************ */
+
+/*Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
+@media all and (max-width:700px){
+
+    a{
+
+        color: white;
+        text-decoration: none;
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        float: center;
+        padding: 0px;
+
+    }
+
+    figure>img{
+
+        display: none;
+    
+    }
+
+    .icons{
+
+        display: block;
+        width: 100%;
+        float: right;
+        margin-top: 25px;
+
+    }
+
+    .icons li {
+    
+        display: inline-block; /* Para poner el menú en horizontal */
+        width: 15%;
+    }
+
+    .imagenes{
+
+        display: none;
+    }
+
+    #div_logoI{
+
+    width: 100%;
+    height: 20%;
+    margin: 5%;
+    margin-left: 27%;
+
+    }
+
+
+    #primero{
+        
+        width: 100%;
+        height: 100px;
+        float: left;
+
+    }
+
+    #segundo{
+    
+        margin-top: 1px;
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin-left: 0;
+
+    }
+
+   #tercero{
+    
+        margin-top: 1px;
+        width: 100%;
+        height: 100px;
+        float: left;
+    }
+
+    #cuarto{
+    
+        margin-top: 1px;
+        width: 100%;
+        height: 100px;
+        float: left;
+
+    }
+
+    #quinto{
+    
+        margin-top: 1px;
+        width: 100%;
+        height: 100px;
+        float: left;
+        margin-left: 0;
+
+    }
+
+    #sexto{
+    
+        margin-top: 1px;
+        width: 100%;
+        height: 100px;
+        float: left;
+
+    }             
+
+}
+
+
+
+/* ************************************************************************************************
+                                            FUENTES EXTERNAS
+************************************************************************************************ */
+
+@font-face {
+    font-family: "Aventura";
+    src: url(../fonts/Aventura-Bold.otf) format("truetype");
+}
+
+@-webkit-keyframes fadein {
+from {
+opacity:0;
+}
+to {
+opacity:1;
+}
+}
